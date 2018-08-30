@@ -5,6 +5,7 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 import com.lijinjin.pojo.Category;
 import com.lijinjin.pojo.Product;
+import com.lijinjin.service.ProductService;
 
 public class TestSpring {
 
@@ -18,6 +19,9 @@ public class TestSpring {
 		Product product=(Product) applicationContext.getBean("p");
 		System.out.println(product.getName());
 		System.out.println(product.getCategory().getName());
+		
+		ProductService productService=(ProductService) applicationContext.getBean("s");
+		productService.doSomeService();
 	}
 
 }
